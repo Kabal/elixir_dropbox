@@ -34,7 +34,7 @@ defmodule ElixirDropbox do
 
   def post_request(client, url, body, headers) do
     headers = Map.merge(headers, headers(client))
-    HTTPoison.post!(url, body, headers) |> upload_response
+    HTTPoison.post!(url, body, headers, [connect_timeout: 1000000, recv_timeout: 1000000, timeout: 1000000]) |> upload_response
   end
 
   def headers(client) do
