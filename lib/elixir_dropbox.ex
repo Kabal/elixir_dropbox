@@ -11,7 +11,7 @@ defmodule ElixirDropbox do
 
   def post(client, url, body \\ "") do
     headers = json_headers
-    post_request(client, "#{@base_url}#{url}", body, headers)
+    post_request(client, "#{@base_url}#{url}", body, headers, [connect_timeout: 1000000, recv_timeout: 1000000, timeout: 1000000])
   end
 
   @spec upload_response(HTTPoison.Response.t) :: response
