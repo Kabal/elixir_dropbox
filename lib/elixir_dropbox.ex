@@ -10,7 +10,7 @@ defmodule ElixirDropbox do
   @upload_url Application.get_env(:elixir_dropbox, :upload_url)
 
   def post(client, url, body \\ "") do
-    headers = json_headers
+    headers = json_headers()
     post_request(client, "#{@base_url}#{url}", body, headers)
   end
 
