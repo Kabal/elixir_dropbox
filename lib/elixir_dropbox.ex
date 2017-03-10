@@ -11,7 +11,7 @@ defmodule ElixirDropbox do
 
   def post(client, url, body \\ "") do
     headers = json_headers
-    post_request(client, "#{@base_url}#{url}", body, headers, [connect_timeout: 1000000, recv_timeout: 1000000, timeout: 1000000])
+    post_request(client, "#{@base_url}#{url}", body, headers)
   end
 
   @spec upload_response(HTTPoison.Response.t) :: response
@@ -58,6 +58,6 @@ defmodule ElixirDropbox do
 
   def download_request(client, url, data, headers) do
     headers = Map.merge(headers, headers(client))
-    HTTPoison.post!("#{@upload_url}#{url}", data, headers) |> download_response
+    HTTPoison.post!("#{@upload_url}#{url}", data, headers, [connect_timeout: 1000000, recv_timeout: 1000000, timeout: 1000000]) |> download_response
   end
 end
