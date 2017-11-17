@@ -1,0 +1,66 @@
+[
+  {
+    "request": {
+      "body": "{\"path\":\"/deleted_folder\"}",
+      "headers": {
+        "Authorization": "Bearer access_token",
+        "Content-Type": "application/json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.dropboxapi.com/2/files/create_folder_v2"
+    },
+    "response": {
+      "body": "{\"metadata\": {\"name\": \"deleted_folder\", \"path_lower\": \"/deleted_folder\", \"path_display\": \"/deleted_folder\", \"id\": \"id:txv5wbAE_Y0AAAAAAAAM0Q\"}}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Sun, 17 Sep 2017 06:09:04 GMT",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
+        "X-Content-Type-Options": "nosniff",
+        "X-Dropbox-Request-Id": "7fc6d10b076e16ddc250011801549054",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Server-Response-Time": "497"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "{\"path\":\"/deleted_folder\"}",
+      "headers": {
+        "Authorization": "Bearer access_token",
+        "Content-Type": "application/json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.dropboxapi.com/2/files/delete_v2"
+    },
+    "response": {
+      "body": "{\"metadata\": {\".tag\": \"folder\", \"name\": \"deleted_folder\", \"path_lower\": \"/deleted_folder\", \"path_display\": \"/deleted_folder\", \"id\": \"id:txv5wbAE_Y0AAAAAAAAM0Q\"}}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Sun, 17 Sep 2017 06:09:05 GMT",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
+        "X-Content-Type-Options": "nosniff",
+        "X-Dropbox-Request-Id": "8545cebe8cffa314d43a2ba8aa7f213f",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Server-Response-Time": "378"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
