@@ -1,22 +1,24 @@
     <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.12.0">
-    <title>ElixirDropbox.Files – ElixirDropbox v0.0.4</title>
-    <link rel="stylesheet" href="dist/app-88251e7c81.css" />
+    <meta name="generator" content="ExDoc v0.16.4">
+    <title>ElixirDropbox.Files – ElixirDropbox v0.0.7</title>
+    <link rel="stylesheet" href="dist/app-5b9e160cec.css" />
     
-      <link rel="canonical" href="https://hexdocs.pm/elixir_dropbox/ElixirDropbox.Files.html" />
     
-    <script src="dist/sidebar_items.js"></script>
+    <script src="dist/sidebar_items-024e7da218.js"></script>
+    
   </head>
   <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
 
     <div class="main">
 <button class="sidebar-toggle">
-  <i class="icon-menu"></i>
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
 </button>
 <section class="sidebar">
 
@@ -27,16 +29,18 @@
         ElixirDropbox
       </h1>
       <h2 class="sidebar-projectVersion">
-        v0.0.4
+        v0.0.7
       </h2>
     </div>
     
   </a>
 
-  <div class="sidebar-search">
-    <i class="icon-search"></i>
-    <input type="text" class="sidebar-searchInput" placeholder="search" autocomplete="off" />
-  </div>
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="search" aria-label="Search" autocomplete="off" />
+  </form>
 
   <ul class="sidebar-listNav">
     <li><a id="extras-list" href="#full-list">Pages</a></li>
@@ -48,10 +52,11 @@
     
 
     
-  </ul>
 
+    
+  </ul>
+  <div class="gradient"></div>
   <ul id="full-list" class="sidebar-fullList"></ul>
-  <div class="sidebar-noResults"></div>
 </section>
 
 <section class="content">
@@ -60,9 +65,8 @@
 
 
       <h1>
-        <small class="visible-xs">ElixirDropbox v0.0.4</small>
+        <small class="visible-xs">ElixirDropbox v0.0.7</small>
         ElixirDropbox.Files
-        
         
       </h1>
 
@@ -72,7 +76,8 @@
         <section id="summary" class="details-list">
           <h1 class="section-heading">
             <a class="hover-link" href="#summary">
-              <i class="icon-link"></i>
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
             </a>
             Summary
           </h1>
@@ -155,12 +160,6 @@ If the source path is a folder all its contents will be copied</p>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#list_revisions/3">list_revisions(client, path, limit \\ 10)</a>
-  </div>
-  
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
     <a href="#move/3">move(client, from_path, to_path)</a>
   </div>
   
@@ -180,12 +179,13 @@ If the source path is a folder all its contents will be moved</p>
     <a href="#upload/6">upload(client, path, file, mode \\ &quot;add&quot;, autorename \\ true, mute \\ false)</a>
   </div>
   
+    <div class="summary-synopsis"><p>Create a new file with the contents provided in the request</p>
+</div>
+  
 </div>
 
   </div>
 
-
-          
 
           
 
@@ -198,234 +198,291 @@ If the source path is a folder all its contents will be moved</p>
         <section id="functions" class="details-list">
           <h1 class="section-heading">
             <a class="hover-link" href="#functions">
-              <i class="icon-link"></i>
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
             </a>
             Functions
           </h1>
           <div class="detail" id="copy/3">
+  
+  
   <div class="detail-header">
     <a href="#copy/3" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
     <span class="signature">copy(client, from_path, to_path)</span>
     
     
+    
   </div>
-  
   <section class="docstring">
     <p>Copy a file or folder to a different location in the user’s Dropbox.
-If the source path is a folder all its contents will be copied. </p>
-<h2>Example</h2>
+If the source path is a folder all its contents will be copied.</p>
+<h2 id="copy/3-example" class="section-heading">
+  <a href="#copy/3-example" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Example
+</h2>
+
 <p>  ElixirDropbox.Files.copy(client, “/Temp/first”, “/Tmp/second”)</p>
-<p>More info at: <a href="https://www.dropbox.com/developers/documentation/http/documentation#files-copy">https://www.dropbox.com/developers/documentation/http/documentation#files-copy</a></p>
+<p>More info at: https://www.dropbox.com/developers/documentation/http/documentation#files-copy_v2</p>
 
   </section>
 </div>
 <div class="detail" id="create_folder/2">
+  
+  
   <div class="detail-header">
     <a href="#create_folder/2" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
     <span class="signature">create_folder(client, path)</span>
     
     
-  </div>
-  
-    <div class="specs">
-      <h4 class="specs-title">Specs</h4>
-      <div class="specs-list">
+    
+      <div class="specs">
         
-          <pre><code class="elixir">create_folder(Client, binary) :: Map</code></pre>
+          <pre>create_folder(Client, binary) :: Map</pre>
         
       </div>
-    </div>
-  
+    
+  </div>
   <section class="docstring">
     <p>Create folder returns map</p>
-<h2>Example</h2>
+<h2 id="create_folder/2-example" class="section-heading">
+  <a href="#create_folder/2-example" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Example
+</h2>
+
 <p>  ElixirDropbox.Files.create_folder client, “/Path”</p>
-<p>More info at: <a href="https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder">https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder</a></p>
+<p>More info at: https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder</p>
 
   </section>
 </div>
 <div class="detail" id="create_folder_to_struct/2">
+  
+  
   <div class="detail-header">
     <a href="#create_folder_to_struct/2" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
     <span class="signature">create_folder_to_struct(client, path)</span>
     
     
-  </div>
-  
-    <div class="specs">
-      <h4 class="specs-title">Specs</h4>
-      <div class="specs-list">
+    
+      <div class="specs">
         
-          <pre><code class="elixir">create_folder_to_struct(Client, binary) :: Map</code></pre>
+          <pre>create_folder_to_struct(Client, binary) :: Map</pre>
         
       </div>
-    </div>
-  
+    
+  </div>
   <section class="docstring">
     <p>Create folder returns Folder struct</p>
-<h2>Example</h2>
+<h2 id="create_folder_to_struct/2-example" class="section-heading">
+  <a href="#create_folder_to_struct/2-example" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Example
+</h2>
+
 <p>  ElixirDropbox.Files.create_folder_to_struct client, “/Path”</p>
-<p>More info at: <a href="https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder">https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder</a></p>
+<p>More info at: https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder</p>
 
   </section>
 </div>
 <div class="detail" id="delete_folder/2">
+  
+  
   <div class="detail-header">
     <a href="#delete_folder/2" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
     <span class="signature">delete_folder(client, path)</span>
     
     
+    
   </div>
-  
   <section class="docstring">
     <p> Delete folder returns map</p>
 <p>  ## Example</p>
 <p>   ElixirDropbox.Files.delete_folder client, “/Path”</p>
-<p> More info at: <a href="https://www.dropbox.com/developers/documentation/http/documentation#files-delete">https://www.dropbox.com/developers/documentation/http/documentation#files-delete</a></p>
+<p> More info at: https://www.dropbox.com/developers/documentation/http/documentation#files-delete</p>
 
   </section>
 </div>
 <div class="detail" id="delete_folder_to_struct/2">
+  
+  
   <div class="detail-header">
     <a href="#delete_folder_to_struct/2" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
     <span class="signature">delete_folder_to_struct(client, path)</span>
     
     
+    
   </div>
-  
   <section class="docstring">
     <p>Delete folder returns Folder struct</p>
-<h2>Example</h2>
+<h2 id="delete_folder_to_struct/2-example" class="section-heading">
+  <a href="#delete_folder_to_struct/2-example" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Example
+</h2>
+
 <p>  ElixirDropbox.Files.delete_folder_to_struct client, “/Path”</p>
-<p>More info at: <a href="https://www.dropbox.com/developers/documentation/http/documentation#files-delete">https://www.dropbox.com/developers/documentation/http/documentation#files-delete</a></p>
+<p>More info at: https://www.dropbox.com/developers/documentation/http/documentation#files-delete</p>
 
   </section>
 </div>
 <div class="detail" id="download/2">
+  
+  
   <div class="detail-header">
     <a href="#download/2" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
     <span class="signature">download(client, path)</span>
     
     
+    
   </div>
-  
   <section class="docstring">
     
   </section>
 </div>
 <div class="detail" id="get_metadata/3">
+  
+  
+    <span id="get_metadata/2"></span>
+  
   <div class="detail-header">
     <a href="#get_metadata/3" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
     <span class="signature">get_metadata(client, path, include_media_info \\ false)</span>
     
     
+    
   </div>
-  
   <section class="docstring">
     
   </section>
 </div>
 <div class="detail" id="get_preview/2">
+  
+  
   <div class="detail-header">
     <a href="#get_preview/2" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
     <span class="signature">get_preview(client, path)</span>
     
     
+    
   </div>
-  
   <section class="docstring">
     
   </section>
 </div>
 <div class="detail" id="get_thumbnail/4">
+  
+  
+    <span id="get_thumbnail/2"></span>
+  
+    <span id="get_thumbnail/3"></span>
+  
   <div class="detail-header">
     <a href="#get_thumbnail/4" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
     <span class="signature">get_thumbnail(client, path, format \\ &quot;jpeg&quot;, size \\ &quot;w64h64&quot;)</span>
     
     
-  </div>
-  
-  <section class="docstring">
-    
-  </section>
-</div>
-<div class="detail" id="list_revisions/3">
-  <div class="detail-header">
-    <a href="#list_revisions/3" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
-    </a>
-    <span class="signature">list_revisions(client, path, limit \\ 10)</span>
-    
     
   </div>
-  
   <section class="docstring">
     
   </section>
 </div>
 <div class="detail" id="move/3">
+  
+  
   <div class="detail-header">
     <a href="#move/3" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
     <span class="signature">move(client, from_path, to_path)</span>
     
     
+    
   </div>
-  
   <section class="docstring">
     <p>Move a file or folder to a different location in the user’s Dropbox.
 If the source path is a folder all its contents will be moved.</p>
-<h2>Example</h2>
+<h2 id="move/3-example" class="section-heading">
+  <a href="#move/3-example" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Example
+</h2>
+
 <p>  ElixirDropbox.Files.move(client, “/Homework/math”, “/Homework/algebra”)</p>
-<p>More info at: <a href="https://www.dropbox.com/developers/documentation/http/documentation#files-move">https://www.dropbox.com/developers/documentation/http/documentation#files-move</a></p>
+<p>More info at: https://www.dropbox.com/developers/documentation/http/documentation#files-move</p>
 
   </section>
 </div>
 <div class="detail" id="restore/3">
+  
+  
   <div class="detail-header">
     <a href="#restore/3" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
     <span class="signature">restore(client, path, rev)</span>
     
     
+    
   </div>
-  
   <section class="docstring">
     
   </section>
 </div>
 <div class="detail" id="upload/6">
+  
+  
+    <span id="upload/3"></span>
+  
+    <span id="upload/4"></span>
+  
+    <span id="upload/5"></span>
+  
   <div class="detail-header">
     <a href="#upload/6" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
     <span class="signature">upload(client, path, file, mode \\ &quot;add&quot;, autorename \\ true, mute \\ false)</span>
     
     
-  </div>
-  
-  <section class="docstring">
     
+  </div>
+  <section class="docstring">
+    <p>Create a new file with the contents provided in the request.</p>
+<h2 id="upload/6-example" class="section-heading">
+  <a href="#upload/6-example" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Example
+</h2>
+
+<p>  ElixirDropbox.Files.upload client, “/mypdf.pdf”, “/mypdf.pdf”</p>
+<p>More info at: https://www.dropbox.com/developers/documentation/http/documentation#files-upload</p>
+
   </section>
 </div>
 
@@ -433,26 +490,25 @@ If the source path is a folder all its contents will be moved.</p>
       
 
       
-
-      
           <footer class="footer">
         <p>
           <span class="line">
             Built using
-            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.12.0),
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.16.4),
           </span>
           <span class="line">
             designed by
             <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
             </span>
         </p>
-        <button class="night-mode-toggle" />
+        <button class="night-mode-toggle"><span class="sr-only">Switch theme</span></button>
       </footer>
     </div>
   </div>
 </section>
 </div>
-  <script src="dist/app-21f1a20b9e.js"></script>
+  <script src="dist/app-da04b39d0c.js"></script>
+  
   </body>
 </html>
 
