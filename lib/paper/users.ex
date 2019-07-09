@@ -13,7 +13,7 @@ defmodule ElixirDropbox.Paper.Users do
  """
  def add(client, doc_id, members, custom_message, quiet) do
    body = %{"doc_id" => doc_id, "members" => members, "custom_message" => custom_message, "quiet" => quiet}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/paper/docs/users/add", result)
  end
 
@@ -28,7 +28,7 @@ defmodule ElixirDropbox.Paper.Users do
  """
  def list(client, doc_id, limit \\ 100, filter_by \\ "shared") do
    body = %{"doc_id" => doc_id, "limit" => limit, "filter_by" => filter_by}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/paper/docs/users/list", result)
  end
 
@@ -43,7 +43,7 @@ defmodule ElixirDropbox.Paper.Users do
  """
  def list_continue(client, doc_id, cursor) do
    body = %{"doc_id" => doc_id, "cursor" => cursor}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/paper/docs/users/continue", result)
  end
 
@@ -59,7 +59,7 @@ defmodule ElixirDropbox.Paper.Users do
  """
  def remove(client, doc_id, member) do
    body = %{"doc_id" => doc_id, "member" => member}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/paper/docs/users/remove", result)
  end
 end

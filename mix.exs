@@ -13,7 +13,7 @@ defmodule ElixirDropbox.Mixfile do
      description: @description,
      package: package(),
      test_coverage: [tool: ExCoveralls],
-     preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.post": :test],
+     preferred_cli_env: [coveralls: :test, "coveralls.detail": :test, "coveralls.post": :test],
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -30,8 +30,8 @@ defmodule ElixirDropbox.Mixfile do
   defp deps do
     [
       { :httpoison, "~> 0.8" },
-      { :poison, "~> 1.5" },
-      { :inch_ex, "~> 0.5", only: [:dev, :test] },
+      { :poison, "~> 4.0.0" },
+      { :inch_ex, "~> 2.0.0", only: [:dev, :test] },
       { :json, "~> 0.3.0" },
       { :ex_doc, "~> 0.14", only: :dev, runtime: false },
       { :exvcr, "~> 0.8", only: :test },

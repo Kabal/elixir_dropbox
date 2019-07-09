@@ -12,7 +12,7 @@ defmodule ElixirDropbox.Files.DeleteBatch do
  """
  def delete_batch(client, path_entries) do
    body = %{"entries" => path_entries}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/files/delete_batch", result)
  end
 
@@ -27,7 +27,7 @@ defmodule ElixirDropbox.Files.DeleteBatch do
  """
  def check(client, async_job_id) do
    body = %{"async_job_id" => async_job_id}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/files/delete_batch/check", result)
  end
 end

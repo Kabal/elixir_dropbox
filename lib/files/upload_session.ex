@@ -70,7 +70,7 @@ defmodule ElixirDropbox.Files.UploadSession do
  """
  def finish_batch(client, entries) do
    body = %{"entries" => entries}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/files/upload_session/finish_batch", result)
  end
 
@@ -87,7 +87,7 @@ defmodule ElixirDropbox.Files.UploadSession do
  """
  def finish_batch_check(client, async_job_id) do
    body = %{"async_job_id" => async_job_id}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/files/upload_session/finish_batch/check", result)
  end
 end

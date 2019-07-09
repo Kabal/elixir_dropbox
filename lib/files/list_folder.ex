@@ -13,7 +13,7 @@ defmodule ElixirDropbox.Files.ListFolder do
  @spec list_folder(Client.t, binary) :: ElixirDropbox.response
  def list_folder(client, path) do
    body = %{"path" => path}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/files/list_folder", result)
  end
 
@@ -31,7 +31,7 @@ defmodule ElixirDropbox.Files.ListFolder do
  @spec list_folder_continue(Client.t, binary) :: ElixirDropbox.response
  def list_folder_continue(client, cursor) do
    body = %{"cursor" => cursor}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/files/list_folder/continue", result)
  end
 
@@ -47,7 +47,7 @@ defmodule ElixirDropbox.Files.ListFolder do
  @spec list_revisions(Client.t, binary, number) :: ElixirDropbox.response
  def list_revisions(client, path, limit \\ 10) do
    body = %{"path" => path, "limit" => limit}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/files/list_revisions", result)
  end
 
@@ -63,7 +63,7 @@ defmodule ElixirDropbox.Files.ListFolder do
  @spec get_latest_cursor(Client.t, binary) :: ElixirDropbox.response
  def get_latest_cursor(client, path) do
    body = %{"path" => path}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/files/list_folder/get_latest_cursor", result)
  end
 
@@ -79,7 +79,7 @@ defmodule ElixirDropbox.Files.ListFolder do
  @spec longpoll(Client.t, binary) :: ElixirDropbox.response
  def longpoll(client, cursor) do
    body = %{"cursor" => cursor, "timeout" => 30}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/files/list_folder/longpoll", result)
  end
 end

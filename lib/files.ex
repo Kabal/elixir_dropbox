@@ -18,7 +18,7 @@ defmodule ElixirDropbox.Files do
   @spec create_folder(Client, binary) :: Map
   def create_folder(client, path) do
     body = %{"path" => path}
-    result = to_string(Poison.Encoder.encode(body, []))
+    result = to_string(Poison.Encoder.encode(body, %{}))
     post(client, "/files/create_folder_v2", result)
   end
 
@@ -56,7 +56,7 @@ defmodule ElixirDropbox.Files do
  """
   def delete_folder(client, path) do
     body = %{"path" => path}
-    result = to_string(Poison.Encoder.encode(body, []))
+    result = to_string(Poison.Encoder.encode(body, %{}))
     post(client, "/files/delete_v2", result)
   end
 
@@ -90,7 +90,7 @@ defmodule ElixirDropbox.Files do
   """
   def copy(client, from_path, to_path) do
     body = %{"from_path" => from_path, "to_path" => to_path}
-    result = to_string(Poison.Encoder.encode(body, []))
+    result = to_string(Poison.Encoder.encode(body, %{}))
     post(client, "/files/copy_v2", result)
   end
 
@@ -106,7 +106,7 @@ defmodule ElixirDropbox.Files do
   """
   def move(client, from_path, to_path) do
     body = %{"from_path" => from_path, "to_path" => to_path}
-    result = to_string(Poison.Encoder.encode(body, []))
+    result = to_string(Poison.Encoder.encode(body, %{}))
     post(client, "/files/move", result)
   end
 
@@ -121,7 +121,7 @@ defmodule ElixirDropbox.Files do
   """
   def restore(client, path, rev) do
     body = %{"path" => path, "rev" => rev}
-    result = to_string(Poison.Encoder.encode(body, []))
+    result = to_string(Poison.Encoder.encode(body, %{}))
     post(client, "/files/restore", result)
   end
 
@@ -136,7 +136,7 @@ defmodule ElixirDropbox.Files do
   """
   def search(client, path, query, start \\ 0, max_results \\ 100, mode \\ "filename") do
     body = %{"path" => path, "query" => query, "start" => start, "max_results" => max_results, "mode" => mode}
-    result = to_string(Poison.Encoder.encode(body, []))
+    result = to_string(Poison.Encoder.encode(body, %{}))
     post(client, "/files/search", result)
   end
 
@@ -208,7 +208,7 @@ defmodule ElixirDropbox.Files do
   """
   def get_thumbnail_batch(client, entries) do
     body = %{"entries" => entries}
-    result = to_string(Poison.Encoder.encode(body, []))
+    result = to_string(Poison.Encoder.encode(body, %{}))
     post_url(client, Application.get_env(:elixir_dropbox, :upload_url), "/files/get_thumbnail_batch", result)
   end
 
@@ -240,7 +240,7 @@ defmodule ElixirDropbox.Files do
   """
   def get_temporary_link(client, path) do
     body = %{"path" => path}
-    result = to_string(Poison.Encoder.encode(body, []))
+    result = to_string(Poison.Encoder.encode(body, %{}))
     post(client, "/files/get_temporary_link", result)
   end
 
@@ -255,7 +255,7 @@ defmodule ElixirDropbox.Files do
   """
   def get_metadata(client, path, include_media_info \\ false, include_deleted \\ false, include_has_explicit_shared_members \\ false) do
     body = %{"path" => path, "include_media_info" => include_media_info, "include_deleted" => include_deleted, "include_has_explicit_shared_members" => include_has_explicit_shared_members}
-    result = to_string(Poison.Encoder.encode(body, []))
+    result = to_string(Poison.Encoder.encode(body, %{}))
     post(client, "/files/get_metadata", result)
    end
 end

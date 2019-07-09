@@ -7,14 +7,14 @@ defmodule ElixirDropbox.Users do
 
   ## Example
 
-    ElixirDropbox.Users client, "TOKEN"  
+    ElixirDropbox.Users client, "TOKEN"
 
   More info at: https://www.dropbox.com/developers/documentation/http/documentation#users-get_current_account
   """
   @spec get_account(Client, binary) :: Map
   def get_account(client, id) do
     body = %{"account_id" => id}
-    result = to_string(Poison.Encoder.encode(body, []))
+    result = to_string(Poison.Encoder.encode(body, %{}))
     post(client, "/users/get_account", result)
   end
 
@@ -77,7 +77,7 @@ defmodule ElixirDropbox.Users do
   @spec get_account_batch(Client, binary) :: Map
   def get_account_batch(client, account_ids) do
     body = %{"account_ids" => account_ids}
-    result = to_string(Poison.Encoder.encode(body, []))
+    result = to_string(Poison.Encoder.encode(body, %{}))
     post(client, "/users/get_account_batch", result)
   end
 end

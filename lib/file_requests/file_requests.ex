@@ -12,7 +12,7 @@ defmodule ElixirDropbox.FileRequests do
  """
  def create(client, title, destination, deadline, open \\ true) do
    body = %{"title" => title, "destination" => destination, "deadline" => deadline, "open" => open}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/file_requests/create", result)
  end
 
@@ -26,7 +26,7 @@ defmodule ElixirDropbox.FileRequests do
  """
  def get(client, id) do
    body = %{"id" => id,}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/file_requests/get", result)
  end
 
@@ -56,7 +56,7 @@ defmodule ElixirDropbox.FileRequests do
  """
  def update(client, id, title, destination, deadline, open \\ true) do
    body = %{"id" => id, "title" => title, "destination" => destination, "deadline" => deadline, "open" => open}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/file_requests/update", result)
  end
 end

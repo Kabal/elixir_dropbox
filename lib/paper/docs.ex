@@ -12,7 +12,7 @@ defmodule ElixirDropbox.Paper.Docs do
  """
  def docs_archive(client, doc_id) do
    body = %{"doc_id" => doc_id}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/paper/docs/archive", result)
  end
 
@@ -63,7 +63,7 @@ defmodule ElixirDropbox.Paper.Docs do
  """
  def get_folder_info(client, doc_id) do
    body = %{"doc_id" => doc_id}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/paper/docs/get_folder_info", result)
  end
 
@@ -78,7 +78,7 @@ defmodule ElixirDropbox.Paper.Docs do
  """
  def docs_list(client, filter_by \\ "docs_created", sort_by \\ "modified", sort_order \\ "descending", limit \\ 100) do
    body = %{"filter_by" => filter_by, "sort_by" => sort_by, "sort_order" => sort_order, "limit" => limit}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/paper/docs/list", result)
  end
 
@@ -93,7 +93,7 @@ defmodule ElixirDropbox.Paper.Docs do
  """
  def permanently_delete(client, doc_id) do
    body = %{"doc_id" => doc_id}
-   result = to_string(Poison.Encoder.encode(body, []))
+   result = to_string(Poison.Encoder.encode(body, %{}))
    post(client, "/paper/docs/permanently_delete", result)
  end
 
